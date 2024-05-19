@@ -6,15 +6,15 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:42:27 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/12 21:00:29 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/17 16:24:12 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_error()
+void	print_error(void)
 {
-	write(2, "error",5);
+	write(2, "error", 5);
 	exit(1);
 }
 int	ft_strchr(const char *s, int c)
@@ -37,7 +37,7 @@ int	ft_strchr(const char *s, int c)
 
 int	ft_atoi(const char *str)
 {
-	int	i;
+	int		i;
 	long	neg;
 	long	res;
 
@@ -60,4 +60,35 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (res * neg);
+}
+
+int	get_index_arr(int *arr, int len, int nb)
+{
+	int	i;
+
+	i = 0;
+	while (i < len)
+	{
+		if (arr[i] == nb)
+			return (i);
+		i++;
+	}
+	return (i);
+}
+
+int	get_index_stack(t_list *a, int nb)
+{
+	t_list *tmp;
+	int i;
+
+	tmp = a;
+	i = 0;
+	while (tmp)
+	{
+		if (tmp->value == nb)
+			return (i);
+		i++;
+		tmp = tmp->next;
+	}
+	return (i);
 }

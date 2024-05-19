@@ -1,9 +1,8 @@
 
 NAME = push_swap
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror -g3
 RM = rm -f
-AR = ar rc
 
 SRC = push_swap.c\
 		parsing.c\
@@ -12,6 +11,11 @@ SRC = push_swap.c\
 				libft.c\
 				libft2.c\
 				list.c\
+				ft_sort.c\
+				actionv1.c\
+				actions2.c\
+				algov1.c\
+				utilis_functions_v2.c\
 				
 				
 						
@@ -21,7 +25,7 @@ OBJS = $(SRC:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CC) -o  $(NAME)  $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 	
 clean:	
 	$(RM) $(OBJS)

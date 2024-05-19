@@ -89,8 +89,8 @@ static char	**ft_split_words(char const *s, char c, char **s2, int num_words)
 
 char	**ft_split(char const *s, char c)
 {
-	char			**s2;
-	unsigned int	num_words;
+	char **s2;
+	unsigned int num_words;
 
 	if (!s)
 		return (0);

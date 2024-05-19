@@ -6,17 +6,17 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:42:15 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/12 21:08:10 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/14 11:03:25 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include<limits.h>
+#include <limits.h>
 
 // check numbers
 // check double numbers
 
-int	check_dig(char	*s)
+int	check_dig(char *s)
 {
 	int	i;
 	int	j;
@@ -35,26 +35,29 @@ int	check_dig(char	*s)
 		return (0);
 }
 
-void	check_ifall_isnumber(char	**matrix)
+void	check_ifall_isnumber(char **matrix)
 {
-	int i;
+	int	i;
 	int	j;
 
 	i = 1;
-    while(matrix[i])
-    {
-        j = 0;
-		while(matrix[i][j])
+	while (matrix[i])
+	{
+		j = 0;
+		while (matrix[i][j])
 		{
 			if (check_dig(matrix[i]) == 0)
 			{
 				print_error();
 			}
-			if ((matrix[i][j] == '-' && matrix[i][j+1] == '-') || (matrix[i][j] == '-' && matrix[i][j+1] == '+') || (matrix[i][j] == '+' && matrix[i][j+1] == '-') || (matrix[i][j] == '+' && matrix[i][j+1] == '+'))
+			if ((matrix[i][j] == '-' && matrix[i][j + 1] == '-')
+				|| (matrix[i][j] == '-' && matrix[i][j + 1] == '+')
+				|| (matrix[i][j] == '+' && matrix[i][j + 1] == '-')
+				|| (matrix[i][j] == '+' && matrix[i][j + 1] == '+'))
 			{
 				print_error();
 			}
-			if ((matrix[i][j] == ' ' && matrix[i][j+1] == ' '))
+			if ((matrix[i][j] == ' ' && matrix[i][j + 1] == ' '))
 				print_error();
 			j++;
 		}
@@ -63,19 +66,21 @@ void	check_ifall_isnumber(char	**matrix)
 		i++;
 	}
 }
-	
-void	check_double(char	**s)
+
+void	check_double(char **s)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		j = i + 1;
-		while(s[j])
+		while (s[j])
 		{
 			if (ft_atoi(s[i]) == ft_atoi(s[j]))
+				print_error();
+			if (ft_strchr(s[i], s[i][j]) == 0)
 				print_error();
 			j++;
 		}
@@ -83,12 +88,12 @@ void	check_double(char	**s)
 	}
 }
 
-void    parsing_func(char **matrix)
+void	parsing_func(char **matrix)
 {
 	int i;
 
 	i = 0;
-	while(matrix[i])
+	while (matrix[i])
 		ft_atoi(matrix[i++]);
 	check_double(matrix);
 }
