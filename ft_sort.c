@@ -6,50 +6,40 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:12:44 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/13 16:58:37 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/25 18:10:50 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort_two(t_list *a)
+int ft_position(t_list *b, int v)
 {
-	t_list	*tmp;
-	int		swap;
+    int i;
 
-	tmp = a;
-	swap = tmp->value;
-	tmp->value = tmp->next->value;
-	tmp->next->value = swap;
+    i = 0;
+    while(b)
+    {
+        if (b->value == v)
+            return (i);
+        else
+            b = b->next;
+        i++;
+    }
+    return (i);
 }
 
-void	ft_sort_two1(t_list *a)
+void ft_sort_three(t_list **a)
 {
-	t_list	*tmp;
-	int		swap;
+	t_list *max;
+	t_list *last;
 
-	tmp = a;
-	swap = tmp->value;
-	tmp->value = tmp->next->next->value;
-	tmp->next->next->value = swap;
-}
-
-void	ft_sort_three(t_list *a)
-{
-	t_list *tmp;
-	tmp = a;
-	if (tmp->next->value > tmp->value
-		&& tmp->next->value < tmp->next->next->value
-		&& tmp->next->next->value > tmp->value)
-		return ;
-	// if (tmp->next->value < tmp->value)
-	//     ft_sort_two(tmp);
-	if (tmp->next->value > tmp->next->next->value
-		&& tmp->value < tmp->next->value)
-		ft_sort_two(tmp->next);
-	if (tmp->next->value > tmp->next->next->value
-		&& tmp->next->value > tmp->next->next->value)
+	last = ft_lstlast(*a);
+	max = ft_find_max(*a);
+	while(max->value != last->value)
 	{
-		ft_sort_two1(tmp);
+		ft_ra(a, 'a');
+		last = ft_lstlast(*a);
 	}
+	if ((*a)->value > (*a)->next->value)
+		ft_sa(a, 'a');
 }

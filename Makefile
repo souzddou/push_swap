@@ -15,6 +15,7 @@ SRC = push_swap.c\
 				actionv1.c\
 				actions2.c\
 				algov1.c\
+				algov2.c\
 				utilis_functions_v2.c\
 				
 				

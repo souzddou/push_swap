@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:43:10 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/17 20:27:10 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/25 18:10:59 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ int	ft_strchr(const char *s, int c);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 t_list	*ft_lstnew(int value);
+t_list	*ft_lstlast(t_list *lst);
 void    ft_sort_two(t_list  *a);
-void    ft_sort_three(t_list    *a);
+void    ft_sort_three(t_list    **a);
 int	get_index_arr(int	*arr, int len, int nb);
 int	get_index_stack(t_list	*a, int nb);
 void    ft_rra(t_list **list, char c);
@@ -45,8 +46,11 @@ void    ft_pa(t_list **a, t_list **b, char c);
 void    ft_rrr(t_list **a, t_list **b, char c);
 int size_of_stack(t_list **list);
 int    get_range(int size);
-void    ft_sort(t_list **a, t_list **b);
-t_list	*ft_find_min(t_list **list);
-void	initindex(t_list **a);
+void    ft_begin_sort(t_list **a, t_list **b);
+t_list	*ft_find_max(t_list *b);
+t_list *ft_find_min(t_list *a);
 void	*sort_arr(int *tab, int size);
+void    ft_end_sort(t_list **a, t_list **b);
+void    *create_array(t_list **a);
+int ft_position(t_list *b, int v);
 #endif

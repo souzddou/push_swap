@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:45:43 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/18 10:05:08 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/25 15:13:28 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,32 +39,38 @@ int	size_of_stack(t_list **list)
 	return (i);
 }
 
-// int	ft_stil_in_index(t_list *a, int len, int p)
-// {
-// 	int	i;
+t_list *ft_find_max(t_list *b)
+{
+    t_list *tmp;
+    t_list *max;
+    
+    if (!b)
+		return (NULL);
+	max = b;
+    tmp = b->next;
+    while (tmp)
+    {
+        if (tmp->value > max->value)
+            max = tmp;
+        tmp = tmp->next;
+    }
+    return (max);
+}
 
-// 	i = 0;
-// 	while (a)
-// 	{
-// 		if ((a)->index <= len + p)
-// 			return (i);
-// 		a = a->next;
-// 		i++;
-// 	}
-// 	return (i);
-// }
-// t_list	*ft_find_min(t_list **list)
-// {
-// 	t_list	*curr;
-// 	t_list	*min;
-
-// 	curr = *list;
-// 	min = *list;
-// 	while (curr != NULL)
-// 	{
-// 		if (min->value > curr->value)
-// 			min = curr;
-// 		curr = curr->next;
-// 	}
-// 	return (min);
-// }
+t_list *ft_find_min(t_list *a)
+{
+    t_list *tmp;
+    t_list *min;
+    
+    if (!a)
+		return (NULL);
+	min = a;
+    tmp = a->next;
+    while (tmp)
+    {
+        if (tmp->value < min->value)
+            min = tmp;
+        tmp = tmp->next;
+    }
+    return (min);
+}
