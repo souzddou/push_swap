@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 12:11:46 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/28 15:31:40 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/28 16:11:39 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void    *create_array(t_list **a)
 {
     int i;
-    // t_var var;
     int *s;
     
     i = 0;
@@ -24,11 +23,25 @@ void    *create_array(t_list **a)
 	while(tmp)
 	{
 		s[i] = tmp->value;
-		// printf("%d\n", s[i]);
 		tmp = tmp->next;
 		i++;
 	}
     return(s);
+}
+
+int	ft_stil_in_index(t_list *a, int size, int r)
+{
+	int	i;
+
+	i = 0;
+	while (a)
+	{
+		if ((a)->index <= size + r)
+			return (i);
+		a = a->next;
+		i++;
+	}
+	return (i);
 }
 
 void	ft_begin_sort(t_list **a, t_list **b)
@@ -56,7 +69,9 @@ void	ft_begin_sort(t_list **a, t_list **b)
 			ft_pa(b, a, 'b');
 			size_b++; 
 		}
+		else if (ft_stil_in_index(*a, size_b, r) <= size_of_stack(a) / 2)
+			ft_ra(a, 'a');
 		else
-			ft_ra(a, 'r');
+			ft_rra(a, 'a');
 	}
 }

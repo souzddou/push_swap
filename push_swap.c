@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:40:34 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/28 15:34:25 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/28 16:12:40 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ int	main(int ac, char **av)
 			ft_lstadd_back(&a, ft_lstnew(ft_atoi(var.matrix[i++])));
 		}
 		ft_begin_sort(&a, &b);
-		ft_end_sort(&a, &b);
-		// while(a)
-		// {
-		// 	printf("after we sort :%d\n", a->value);
-		// 	a = a->next;
-		// }
+		// ft_end_sort(&a, &b);
+		while(b)
+		{
+			printf("after we sort :%d\n", b->value);
+			b = b->next;
+		}
 		return (0);
 	}
 	return (1);
