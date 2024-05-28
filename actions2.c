@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:41:56 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/27 13:23:35 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/28 15:32:31 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	ft_pa(t_list **a, t_list **b, char c)
 		write(1, "pa\n", 3);
 	else if (c == 'b')
 		write(1, "pb\n", 3);
-	(void)c;
 }
 
 void	ft_rb(t_list **list, char c)
@@ -41,7 +40,6 @@ void	ft_rb(t_list **list, char c)
 	first_node->next = NULL;
 	if (c == 'b')
 		write(1, "rb\n", 3);
-	(void)c;
 }
 
 void	ft_rrb(t_list **list, char c)

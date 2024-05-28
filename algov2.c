@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 12:11:54 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/25 14:18:30 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/28 15:33:27 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void    ft_end_sort(t_list **a, t_list **b)
             max = ft_find_max(*b);
         }
         else if (current_position(*b, max) <= size_of_stack(b)/2)
-            ft_rb(b, 'r');
+            ft_rb(b, 'b');
         else
-            ft_rrb(b, 'r');
+            ft_rrb(b, 'b');
     }
 }
