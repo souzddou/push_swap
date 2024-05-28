@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:43:10 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/25 18:10:59 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/27 11:31:38 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ t_list	*ft_lstnew(int value);
 t_list	*ft_lstlast(t_list *lst);
 void    ft_sort_two(t_list  *a);
 void    ft_sort_three(t_list    **a);
+void    ft_sort_four(t_list    **a, t_list **b);
+void    ft_sort_five(t_list    **a, t_list **b);
 int	get_index_arr(int	*arr, int len, int nb);
 int	get_index_stack(t_list	*a, int nb);
 void    ft_rra(t_list **list, char c);

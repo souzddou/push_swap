@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 12:11:46 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/25 11:33:17 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/27 14:41:35 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	ft_begin_sort(t_list **a, t_list **b)
 	while (*a)
 	{
 		(*a)->index = get_index_arr(sort_arr(arr, len), len, (*a)->value);
-		printf("%d--->%d\n", (*a)->value, (*a)->index);
 		if ((*a)->index <= size_b)
 		{
 			ft_pa(b, a, 'b');
