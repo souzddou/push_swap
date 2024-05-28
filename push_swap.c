@@ -6,11 +6,27 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:40:34 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/28 16:12:40 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/28 19:31:55 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int check_sort(t_list *list)
+{
+  t_list *tmp = list;
+  t_list *tmp2 = list->next;
+
+  while (tmp2)
+  {
+    if (tmp->value > tmp2->value)
+      return (0);
+    tmp = tmp2;
+    tmp2 = tmp2->next;
+  }
+  return (1);
+}
+
 
 int	main(int ac, char **av)
 {
@@ -23,21 +39,25 @@ int	main(int ac, char **av)
 	{
 		a = NULL;
 		b = NULL;
-		// check_ifall_isnumber(av);
+		check_ifall_isnumber(av);
 		var.matrix = read_numbers(ac, av);
-		// parsing_func(var.matrix);
+		if (check_dig(var.matrix) == 0)
+				print_error();
+		parsing_func(var.matrix);
 		i = 0;
 		while (var.matrix[i])
 		{
 			ft_lstadd_back(&a, ft_lstnew(ft_atoi(var.matrix[i++])));
 		}
+		if (check_sort(a) == 1)
+			exit(0);
 		ft_begin_sort(&a, &b);
-		// ft_end_sort(&a, &b);
-		while(b)
-		{
-			printf("after we sort :%d\n", b->value);
-			b = b->next;
-		}
+		ft_end_sort(&a, &b);
+		// while(b)
+		// {
+		// 	printf("after we sort :%d\n", b->value);
+		// 	b = b->next;
+		// }
 		return (0);
 	}
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:43:10 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/27 11:31:38 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/28 19:30:20 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,5 @@ void	*sort_arr(int *tab, int size);
 void    ft_end_sort(t_list **a, t_list **b);
 void    *create_array(t_list **a);
 int ft_position(t_list *b, int v);
+int	check_dig(char **s);
 #endif

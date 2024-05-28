@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:42:15 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/14 11:03:25 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/28 19:32:15 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,26 @@
 // check numbers
 // check double numbers
 
-int	check_dig(char *s)
+int	check_dig(char **s)
 {
 	int	i;
 	int	j;
+	int c = 0;
 
 	i = 0;
-	j = 0;
+	
 	while (s[i])
 	{
-		if (s[i] >= '0' && s[i] <= '9')
+		j = 0;
+		while(s[j])
+		{
+			if ((s[i][j] >= '0' && s[i][j] <= '9') || s[i][j] == ' ')
+				c++;
 			j++;
+		}
 		i++;
 	}
-	if (i == j)
+	if (i == c)
 		return (1);
 	else
 		return (0);
@@ -46,10 +52,6 @@ void	check_ifall_isnumber(char **matrix)
 		j = 0;
 		while (matrix[i][j])
 		{
-			if (check_dig(matrix[i]) == 0)
-			{
-				print_error();
-			}
 			if ((matrix[i][j] == '-' && matrix[i][j + 1] == '-')
 				|| (matrix[i][j] == '-' && matrix[i][j + 1] == '+')
 				|| (matrix[i][j] == '+' && matrix[i][j + 1] == '-')
@@ -79,8 +81,6 @@ void	check_double(char **s)
 		while (s[j])
 		{
 			if (ft_atoi(s[i]) == ft_atoi(s[j]))
-				print_error();
-			if (ft_strchr(s[i], s[i][j]) == 0)
 				print_error();
 			j++;
 		}
