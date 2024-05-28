@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:40:34 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/28 19:31:55 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/28 19:59:09 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,18 @@ int	main(int ac, char **av)
 	t_list	*a;
 	t_list	*b;
 
+	i = 0;
 	if (ac >= 2)
 	{
 		a = NULL;
 		b = NULL;
+		if (ft_strcmp(av[1], " ") == 0)
+			print_error();
 		check_ifall_isnumber(av);
 		var.matrix = read_numbers(ac, av);
 		if (check_dig(var.matrix) == 0)
 				print_error();
 		parsing_func(var.matrix);
-		i = 0;
 		while (var.matrix[i])
 		{
 			ft_lstadd_back(&a, ft_lstnew(ft_atoi(var.matrix[i++])));

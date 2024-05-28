@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:44:57 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/28 19:36:16 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/28 19:40:36 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,6 @@ char	**read_numbers(int ac, char **av)
 		exit(1);
 	i = 1;
 	s = ft_strdup("");
-	if (ft_strcmp(av[i], " ") == 0)
-		return (NULL);
 	while (i < ac)
 	{
 		s = ft_strjoin(s, av[i]);

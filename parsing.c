@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:42:15 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/28 19:32:15 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/28 19:57:59 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,35 @@
 
 // check numbers
 // check double numbers
-
+#include<string.h>
 int	check_dig(char **s)
 {
 	int	i;
 	int	j;
 	int c = 0;
+	int co = 0;
 
 	i = 0;
 	
 	while (s[i])
 	{
 		j = 0;
+		if (strlen(*s) != 1)
+		{
 		while(s[j])
 		{
 			if ((s[i][j] >= '0' && s[i][j] <= '9') || s[i][j] == ' ')
 				c++;
 			j++;
 		}
+		}
+		else{
+			if (*s[i] >= '0' && *s[i] <= '9')
+			co++;
+		}
 		i++;
 	}
-	if (i == c)
+	if (i == c || co == i)
 		return (1);
 	else
 		return (0);
