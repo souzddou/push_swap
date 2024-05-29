@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:42:15 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/28 19:57:59 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/29 20:05:49 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,38 +16,40 @@
 // check numbers
 // check double numbers
 #include<string.h>
-int	check_dig(char **s)
-{
-	int	i;
-	int	j;
-	int c = 0;
-	int co = 0;
+int check_dig(char **s) {
+    int i, c;
 
 	i = 0;
-	
-	while (s[i])
+    while(s[i])
 	{
-		j = 0;
-		if (strlen(*s) != 1)
+        c = 0;
+        if (strlen(*s) == 1)
 		{
-		while(s[j])
+            if ((*s[i] >= '0' && *s[i] <= '9'))
+                return 1;
+			else
+                return 0;
+        }
+		else
 		{
-			if ((s[i][j] >= '0' && s[i][j] <= '9') || s[i][j] == ' ')
-				c++;
-			j++;
-		}
-		}
-		else{
-			if (*s[i] >= '0' && *s[i] <= '9')
-			co++;
-		}
+            int j = 0;
+			while(s[i][j]) 
+			{
+                if ((s[i][j] >= '0' && s[i][j] <= '9') || s[i][j] == ' ')
+                    c++;
+                else
+                	return 0;
+				j++;
+            }
+            if ((unsigned long)c != strlen(s[i]))
+                return 0;
+        }
 		i++;
-	}
-	if (i == c || co == i)
-		return (1);
-	else
-		return (0);
+    }
+
+    return 1;
 }
+
 
 void	check_ifall_isnumber(char **matrix)
 {
