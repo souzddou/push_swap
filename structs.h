@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:42:05 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/15 19:36:13 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/30 11:48:07 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct s_list{
     int value;
     struct s_list   *next;
     int index;
-    int rank;
 }t_list;
 
 

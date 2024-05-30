@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:40:34 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/29 19:56:35 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/30 11:56:48 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,47 @@ int check_sort(t_list *list)
   return (1);
 }
 
+void check_parsing(char **av, int ac, t_list **a)
+{
+	t_var var;
+	int i;
+
+	if (ft_strcmp(av[1], " ") == 0)
+			print_error();
+		check_ifall_isnumber(av);
+		var.matrix = read_numbers(ac, av);
+		if (check_dig(var.matrix) == 0)
+				print_error();
+		parsing_func(var.matrix);
+		i = 0;
+		while (var.matrix[i])
+		{
+			ft_lstadd_back(a, ft_lstnew(ft_atoi(var.matrix[i++])));
+		}
+}
+
+void	begin_sort(t_list **a, t_list **b)
+{
+	if (!check_sort(*a))
+		{
+			if (size_of_stack(a) <= 3)
+				ft_sort_three(a);
+			else if (size_of_stack(a) == 4)
+				ft_sort_four(a, b);
+			else if (size_of_stack(a) == 5)
+				ft_sort_five(a, b);
+			else if (size_of_stack(a) > 5)
+			{
+				ft_first_sort(a, b);
+				ft_second_sort(a, b);
+			}
+		}
+}
+
 
 int	main(int ac, char **av)
 {
 	int		i;
-	t_var	var;
 	t_list	*a;
 	t_list	*b;
 
@@ -40,26 +76,8 @@ int	main(int ac, char **av)
 	{
 		a = NULL;
 		b = NULL;
-		if (ft_strcmp(av[1], " ") == 0)
-			print_error();
-		check_ifall_isnumber(av);
-		var.matrix = read_numbers(ac, av);
-		if (check_dig(var.matrix) == 0)
-				print_error();
-		parsing_func(var.matrix);
-		while (var.matrix[i])
-		{
-			ft_lstadd_back(&a, ft_lstnew(ft_atoi(var.matrix[i++])));
-		}
-		if (check_sort(a) == 1)
-			exit(0);
-		ft_begin_sort(&a, &b);
-		ft_end_sort(&a, &b);
-		// while(b)
-		// {
-		// 	printf("after we sort :%d\n", b->value);
-		// 	b = b->next;
-		// }
+		check_parsing(av, ac, &a);
+		begin_sort(&a, &b);
 		return (0);
 	}
 	return (1);

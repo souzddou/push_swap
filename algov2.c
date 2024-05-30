@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 12:11:54 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/28 15:33:27 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/30 11:54:11 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int current_position(t_list *b, t_list *list)
     return (i);
 }
 
-void    ft_end_sort(t_list **a, t_list **b)
+void    ft_second_sort(t_list **a, t_list **b)
 {
     t_list *max;
     

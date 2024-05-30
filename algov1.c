@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 12:11:46 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/28 16:11:39 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/30 11:54:05 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_stil_in_index(t_list *a, int size, int r)
 	return (i);
 }
 
-void	ft_begin_sort(t_list **a, t_list **b)
+void	ft_first_sort(t_list **a, t_list **b)
 {
 	int	r;
 	int	size_b;

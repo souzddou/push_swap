@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:43:10 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/28 19:30:20 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/30 11:53:27 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ void    ft_pa(t_list **a, t_list **b, char c);
 void    ft_rrr(t_list **a, t_list **b, char c);
 int size_of_stack(t_list **list);
 int    get_range(int size);
-void    ft_begin_sort(t_list **a, t_list **b);
+void    ft_first_sort(t_list **a, t_list **b);
 t_list	*ft_find_max(t_list *b);
 t_list *ft_find_min(t_list *a);
 void	*sort_arr(int *tab, int size);
-void    ft_end_sort(t_list **a, t_list **b);
+void    ft_second_sort(t_list **a, t_list **b);
 void    *create_array(t_list **a);
 int ft_position(t_list *b, int v);
 int	check_dig(char **s);
