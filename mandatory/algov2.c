@@ -6,11 +6,11 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 12:11:54 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/30 11:54:11 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:02:57 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int current_position(t_list *b, t_list *list)
 {

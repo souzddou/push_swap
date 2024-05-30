@@ -6,29 +6,26 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:42:15 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/29 20:05:49 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:02:44 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <limits.h>
+#include "../includes/push_swap.h"
 
-// check numbers
-// check double numbers
-#include<string.h>
-int check_dig(char **s) {
+int check_dig(char **s)
+{
     int i, c;
 
 	i = 0;
     while(s[i])
 	{
         c = 0;
-        if (strlen(*s) == 1)
+        if (ft_strlen(*s) == 1)
 		{
             if ((*s[i] >= '0' && *s[i] <= '9'))
-                return 1;
+                return (1);
 			else
-                return 0;
+                return (0);
         }
 		else
 		{
@@ -38,16 +35,15 @@ int check_dig(char **s) {
                 if ((s[i][j] >= '0' && s[i][j] <= '9') || s[i][j] == ' ')
                     c++;
                 else
-                	return 0;
+                	return (0);
 				j++;
             }
-            if ((unsigned long)c != strlen(s[i]))
-                return 0;
+            if ((size_t)c != ft_strlen(s[i]))
+                return (0);
         }
 		i++;
     }
-
-    return 1;
+    return (1);
 }
 
 

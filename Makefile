@@ -1,22 +1,24 @@
 
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror 
 RM = rm -f
 
-SRC = push_swap.c\
-		parsing.c\
-			read_numbers_func.c\
-				utilis_functions.c\
-				libft.c\
-				libft2.c\
-				list.c\
-				ft_sort.c\
-				actionv1.c\
-				actions2.c\
-				algov1.c\
-				algov2.c\
-				utilis_functions_v2.c\
+SRC = mandatory/push_swap.c\
+		mandatory/parsing.c\
+			mandatory/read_numbers_func.c\
+				mandatory/utilis_functions.c\
+				libft/libft.c\
+				libft/libft2.c\
+				mandatory/list.c\
+				mandatory/ft_sort.c\
+				mandatory/actionv1.c\
+				mandatory/actions2.c\
+				mandatory/algov1.c\
+				mandatory/algov2.c\
+				mandatory/free_functions.c\
+				mandatory/utilis_functions_v2.c\
+				printf/ft_printf.c printf/ft_print_nbr.c printf/ft_print_str.c printf/ft_printf_char.c printf/ft_print_hex.c printf/ft_print_ptr.c printf/ft_print_unsigned.c\
 				
 				
 						

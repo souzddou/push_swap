@@ -6,11 +6,11 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:42:27 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/17 16:24:12 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:03:23 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	print_error(void)
 {

@@ -6,11 +6,11 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:40:34 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/30 11:56:48 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:20:41 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int check_sort(t_list *list)
 {
@@ -78,6 +78,8 @@ int	main(int ac, char **av)
 		b = NULL;
 		check_parsing(av, ac, &a);
 		begin_sort(&a, &b);
+		print_stack(&a);
+		free_stack(a);
 		return (0);
 	}
 	return (1);

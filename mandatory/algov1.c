@@ -6,11 +6,11 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 12:11:46 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/30 11:54:05 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:03:41 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void    *create_array(t_list **a)
 {

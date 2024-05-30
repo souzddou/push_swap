@@ -6,11 +6,11 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:43:57 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/06 11:38:21 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:02:01 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 static int	ft_count_words(char const *str, char c)
 {

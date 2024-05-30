@@ -6,11 +6,11 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:12:44 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/30 11:58:14 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:03:06 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void ft_sort_three(t_list **a)
 {

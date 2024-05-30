@@ -6,11 +6,11 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:44:32 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/09 17:28:14 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:03:09 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 t_list	*ft_lstnew(int value)
 {

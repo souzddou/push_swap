@@ -6,14 +6,13 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:44:57 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/28 19:40:36 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:03:17 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <string.h>
+#include "../includes/push_swap.h"
 
-void	swap(int *tab, int p1, int p2)
+void	ft_swap(int *tab, int p1, int p2)
 {
 	int tmp = tab[p1];
 	tab[p1] = tab[p2];
@@ -31,7 +30,7 @@ void	*bubble_sort(int *tab, int size)
 		while (j < size - 1)
 		{
 			if (tab[j] > tab[j + 1])
-				swap(tab, j, j + 1);
+				ft_swap(tab, j, j + 1);
 			j++;
 		}
 		i++;

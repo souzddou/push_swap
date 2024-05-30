@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:43:10 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/30 11:53:27 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:20:30 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,9 @@ void    ft_second_sort(t_list **a, t_list **b);
 void    *create_array(t_list **a);
 int ft_position(t_list *b, int v);
 int	check_dig(char **s);
+void    print_stack(t_list **a);
+size_t	ft_strlen(char *s);
+int	ft_printf(const char*s, ...);
+void	free_stack(t_list *head);
+
 #endif

@@ -1,30 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions2.c                                         :+:      :+:    :+:   */
+/*   actionv1.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/05 11:41:56 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/28 15:32:31 by souzddou         ###   ########.fr       */
+/*   Created: 2024/05/05 11:41:17 by souzddou          #+#    #+#             */
+/*   Updated: 2024/05/30 16:02:48 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
-void	ft_pa(t_list **a, t_list **b, char c)
+void	ft_sa(t_list **list, char c)
 {
-	if (!(*b))
-		exit(0);
-	ft_lstadd_front(a, ft_lstnew((*b)->value));
-	(*b) = (*b)->next;
+	t_list	*tmp;
+	int		swap;
+
+	tmp = *list;
+	swap = tmp->value;
+	tmp->value = tmp->next->value;
+	tmp->next->value = swap;
 	if (c == 'a')
-		write(1, "pa\n", 3);
-	else if (c == 'b')
-		write(1, "pb\n", 3);
+		write(1, "sa\n", 3);
+	(void)c;
 }
 
-void	ft_rb(t_list **list, char c)
+void	ft_sb(t_list **list, char c)
+{
+	t_list	*tmp;
+	int		swap;
+
+	tmp = *list;
+	swap = tmp->value;
+	tmp->value = tmp->next->value;
+	tmp->next->value = swap;
+	if (c == 'b')
+		write(1, "sb\n", 3);
+}
+
+void	ft_ra(t_list **list, char c)
 {
 	t_list	*first_node;
 	t_list	*last_node;
@@ -38,11 +53,12 @@ void	ft_rb(t_list **list, char c)
 	*list = first_node->next;
 	last_node->next = first_node;
 	first_node->next = NULL;
-	if (c == 'b')
-		write(1, "rb\n", 3);
+	if (c == 'a')
+		write(1, "ra\n", 3);
+	(void)c;
 }
 
-void	ft_rrb(t_list **list, char c)
+void	ft_rra(t_list **list, char c)
 {
 	t_list	*last_node;
 	t_list	*prev_laste_node;
@@ -62,26 +78,16 @@ void	ft_rrb(t_list **list, char c)
 		last_node->next = *list;
 		*list = last_node;
 	}
-	if (c == 'b')
-		write(1, "rrb\n", 4);
+	if (c == 'a')
+		write(1, "rra\n", 4);
 }
 
-void	ft_rrr(t_list **a, t_list **b, char c)
+void	ft_rr(t_list **a, t_list **b, char c)
 {
 	if (!(*a) || !(*b))
 		exit(0);
-	ft_rra(a, 'a');
-	ft_rrb(b, 'b');
+	ft_ra(a, 'a');
+	ft_rb(b, 'b');
 	if (c == 'r')
-		write(1, "rrr\n", 4);
-}
-
-void	ft_ss(t_list **a, t_list **b, char c)
-{
-	if (!(*a) || !(*b))
-		exit(0);
-	ft_sa(a, 'a');
-	ft_sb(b, 'b');
-	if (c == 's')
-		write(1, "ss\n", 3);
+		write(1, "rr\n", 3);
 }

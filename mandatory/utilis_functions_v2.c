@@ -6,11 +6,11 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:45:43 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/25 15:13:28 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:11:21 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	get_range(int size)
 {
@@ -73,4 +73,13 @@ t_list *ft_find_min(t_list *a)
         tmp = tmp->next;
     }
     return (min);
+}
+
+void    print_stack(t_list **a)
+{
+    while(*a)
+    {
+        ft_printf("%d\n", (*a)->value); // fix this later
+        (*a) = (*a)->next;
+    }
 }
