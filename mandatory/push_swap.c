@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:40:34 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/30 16:20:41 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/02 15:25:35 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,8 @@ void check_parsing(char **av, int ac, t_list **a)
 
 	if (ft_strcmp(av[1], " ") == 0)
 			print_error();
-		check_ifall_isnumber(av);
 		var.matrix = read_numbers(ac, av);
-		if (check_dig(var.matrix) == 0)
-				print_error();
-		parsing_func(var.matrix);
+		parsing_func(ac, av);
 		i = 0;
 		while (var.matrix[i])
 		{

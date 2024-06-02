@@ -25,4 +25,4 @@ void	free_stack(t_list *head)
 // 	free_stack(head);
 // 	print_error();
 // 	exit (1);
-// }
+// }e
