@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:40:34 by souzddou          #+#    #+#             */
-/*   Updated: 2024/06/07 17:11:23 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/07 18:39:32 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,18 @@ void	check_parsing(char **av, int ac, t_list **a)
 {
 	t_var	var;
 	int		i;
+	int		j;
 
 	parsing_func(ac, av);
 	if (ft_strcmp(av[1], " ") == 0)
 		print_error();
+	j = 0;
+	while (av[j])
+	{
+		if (ft_strlen(av[j]) == 0)
+			print_error();
+		j++;
+	}
 	var.matrix = read_numbers(ac, av);
 	check_double(ac, var.matrix);
 	i = 0;
@@ -67,6 +75,7 @@ void	begin_sort(t_list **a, t_list **b)
 			ft_first_sort(a, b, arr, len);
 			ft_second_sort(a, b);
 		}
+		print_stack(a);
 	}
 	free(arr);
 }
@@ -84,7 +93,6 @@ int	main(int ac, char **av)
 		b = NULL;
 		check_parsing(av, ac, &a);
 		begin_sort(&a, &b);
-		print_stack(&a);
 		free_stack(a);
 		return (0);
 	}
