@@ -19,8 +19,10 @@ int check_sort(t_list *list)
 
   while (tmp2)
   {
-    if (tmp->value > tmp2->value)
+    if (tmp && tmp2 && tmp->value && tmp2->value && tmp->value > tmp2->value)
+	{
       return (0);
+	}
     tmp = tmp2;
     tmp2 = tmp2->next;
   }
@@ -31,18 +33,24 @@ void check_parsing(char **av, int ac, t_list **a)
 {
 	t_var var;
 	int i;
+	t_data_with_list data_array[ac];
 
 	if (ft_strcmp(av[1], " ") == 0)
 			print_error();
+
 		var.matrix = read_numbers(ac, av);
 		parsing_func(ac, av);
+
 		i = 0;
 		while (var.matrix[i])
 		{
-			ft_lstadd_back(a, ft_lstnew(ft_atoi(var.matrix[i++])));
+			data_array[i].data = ft_atoi(var.matrix[i]);
+			data_array[i].list = ft_lstnew(data_array[i].data);
+			ft_lstadd_back(a, data_array[i].list);
+			// printf("%p\n", data_array[i].list);
+			i++;
 		}
-		// i = 0;
-		// free_str(var.matrix);
+		free_strr(var.matrix);
 }
 
 void	begin_sort(t_list **a, t_list **b)
@@ -78,8 +86,11 @@ int	main(int ac, char **av)
 		check_parsing(av, ac, &a);
 		begin_sort(&a, &b);
 		print_stack(&a);
-		free_stack(a);
+		// ft_lstclear(&b , free);
+		ft_lstclear(&a , free);
+		// free_stack(a);
 		return (0);
 	}
+
 	return (1);
 }

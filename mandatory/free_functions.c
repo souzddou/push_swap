@@ -12,7 +12,7 @@ void	free_stack(t_list *head)
 	}
 }
 
-void	free_str(char **str)
+void	free_strr(char **str)
 {
 	int	i;
 
@@ -24,6 +24,25 @@ void	free_str(char **str)
 	}
 	free(str);
 }
+// void free_all_lists(t_data_with_list data_array[], int size)
+// {
+//   for (int i = 0; i < size; i++)
+//   {
+//     if (data_array[i].list != NULL)
+// 	{
+//       t_list* current = data_array[i].list;
+//       while (current != NULL)
+// 	  {
+//         t_list* next = current->next;
+//         free(current);
+//         current = next;
+//       }
+//     //   data_array[i].list = NULL;
+//     }
+//   }
+// }
+
+
 // void	print_errr_and_free_all(t_list *head, char **split, int n)
 // {
 // 	if (split != NULL)

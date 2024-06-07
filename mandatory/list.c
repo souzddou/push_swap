@@ -42,6 +42,24 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	}
 }
 
+void	ft_lstclear(t_list **lst, void (*del)(void
+*))
+{
+	t_list	*tmp;
+
+	if (!lst || !del)
+		return ;
+	if (lst)
+	{
+		while (*lst)
+		{
+			tmp = (*lst)->next;
+			free(*lst);
+			*lst = tmp;
+		}
+	}
+}
+
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	if (lst != NULL && new != NULL)

@@ -14,10 +14,13 @@
 
 void	ft_pa(t_list **a, t_list **b, char c)
 {
+	t_list *tmp;
 	if (!(*b))
 		exit(0);
 	ft_lstadd_front(a, ft_lstnew((*b)->value));
-	(*b) = (*b)->next;
+	tmp = (*b)->next;
+	free(*b);
+	(*b) = tmp;
 	if (c == 'a')
 		write(1, "pa\n", 3);
 	else if (c == 'b')

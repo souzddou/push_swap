@@ -34,8 +34,8 @@ void    ft_sort_four(t_list **a, t_list**b)
     
     max = ft_find_min(*a);
     int *s = create_array(a);
-    for(int i = 0; s[i]; i++)
-        printf("%d\n", s[i]);
+    // for(int i = 0; s[i]; i++)
+    //     printf("%d\n", s[i]);
     int index = get_index_arr(s, size_of_stack(a), max->value);
     while(index)
     {
@@ -43,8 +43,16 @@ void    ft_sort_four(t_list **a, t_list**b)
         index--;
     }
     ft_pa(b, a, 'b'); /*push max to b*/
+    printf("--\n");
+    print_stack(a);
+    printf("--\n");
+    print_stack(b);
+
+    printf("--\n");
     ft_sort_three(a);
     ft_pa(a, b, 'a');
+    ft_lstclear(b , free);
+    free(s);
 }
 
 void    ft_sort_five(t_list **a, t_list **b)
@@ -63,4 +71,5 @@ void    ft_sort_five(t_list **a, t_list **b)
     }
     ft_pa(b, a, 'b'); /*push max to b*/
     ft_sort_four(a, b);
+    free(s);
 }

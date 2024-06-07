@@ -59,6 +59,10 @@ void    print_stack(t_list **a);
 size_t	ft_strlen(char *s);
 int	ft_printf(const char*s, ...);
 void	free_stack(t_list *head);
-void	free_str(char **str);
+void	free_strr(char **str);
+void	ft_lstclear(t_list **lst, void (*del)(void
+*));
+// void free_all_lists(t_data_with_list data_array[], int size);
+// void	free_stackk(t_data_with_list *head, int ac);
 
 #endif

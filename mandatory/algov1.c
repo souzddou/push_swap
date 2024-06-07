@@ -74,4 +74,5 @@ void	ft_first_sort(t_list **a, t_list **b)
 		else
 			ft_rra(a, 'a');
 	}
+	free(arr);
 }
