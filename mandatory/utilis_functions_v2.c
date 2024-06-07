@@ -77,9 +77,12 @@ t_list *ft_find_min(t_list *a)
 
 void    print_stack(t_list **a)
 {
-    while(*a)
+    t_list *tmp;
+
+    tmp = *a;
+    while(tmp)
     {
-        ft_printf("%d\n", (*a)->value); // fix this later
-        (*a) = (*a)->next;
+        ft_printf("%d\n", tmp->value); // fix this later
+        tmp = tmp->next;
     }
 }

@@ -56,7 +56,7 @@ char	**read_numbers(int ac, char **av)
 	if (ac < 2)
 		exit(1);
 	i = 1;
-	s = ft_strdup("");
+	s = NULL;
 	while (i < ac)
 	{
 		s = ft_strjoin(s, av[i]);

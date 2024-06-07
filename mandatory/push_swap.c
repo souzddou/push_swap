@@ -41,6 +41,8 @@ void check_parsing(char **av, int ac, t_list **a)
 		{
 			ft_lstadd_back(a, ft_lstnew(ft_atoi(var.matrix[i++])));
 		}
+		// i = 0;
+		// free_str(var.matrix);
 }
 
 void	begin_sort(t_list **a, t_list **b)

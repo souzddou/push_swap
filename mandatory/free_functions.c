@@ -11,6 +11,19 @@ void	free_stack(t_list *head)
 		free(tmp);
 	}
 }
+
+void	free_str(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != NULL)
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+}
 // void	print_errr_and_free_all(t_list *head, char **split, int n)
 // {
 // 	if (split != NULL)

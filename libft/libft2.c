@@ -35,7 +35,7 @@ char	*ft_strjoin(char *line, char *buff)
 		line = (char *)malloc(1 * sizeof(char));
 		line[0] = '\0';
 	}
-	if (!line || !buff)
+	if (!buff)
 		return (NULL);
 	str = malloc(sizeof(char) * ((ft_strlen(line) + ft_strlen(buff)) + 1));
 	if (str == NULL)

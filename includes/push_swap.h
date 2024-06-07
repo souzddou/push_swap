@@ -59,5 +59,6 @@ void    print_stack(t_list **a);
 size_t	ft_strlen(char *s);
 int	ft_printf(const char*s, ...);
 void	free_stack(t_list *head);
+void	free_str(char **str);
 
 #endif

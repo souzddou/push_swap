@@ -46,7 +46,7 @@ void	check_double(int ac, char **av)
 	int	i;
 	int	j;
 
-	i = 0;
+	i = 1;
 	while (i < ac)
 	{
 		j = i + 1;
