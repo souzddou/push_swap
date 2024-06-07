@@ -6,27 +6,28 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 12:11:46 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/30 16:03:41 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/07 15:26:41 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    *create_array(t_list **a)
+void	*create_array(t_list **a)
 {
-    int i;
-    int *s;
-    
-    i = 0;
-	t_list *tmp = *a;
-    s = malloc(sizeof(int) * size_of_stack(a));
-	while(tmp)
+	int		i;
+	int		*s;
+	t_list	*tmp;
+
+	i = 0;
+	tmp = *a;
+	s = malloc(sizeof(int) * size_of_stack(a));
+	while (tmp)
 	{
 		s[i] = tmp->value;
 		tmp = tmp->next;
 		i++;
 	}
-    return(s);
+	return (s);
 }
 
 int	ft_stil_in_index(t_list *a, int size, int r)
@@ -44,15 +45,11 @@ int	ft_stil_in_index(t_list *a, int size, int r)
 	return (i);
 }
 
-void	ft_first_sort(t_list **a, t_list **b)
+void	ft_first_sort(t_list **a, t_list **b, int *arr, int len)
 {
 	int	r;
 	int	size_b;
-	int len;
-	int *arr;
-	
-	len = size_of_stack(a);
-	arr = create_array(a);
+
 	size_b = 0;
 	r = get_range(size_of_stack(a));
 	while (*a)
@@ -67,7 +64,7 @@ void	ft_first_sort(t_list **a, t_list **b)
 		else if ((*a)->index <= size_b + r)
 		{
 			ft_pa(b, a, 'b');
-			size_b++; 
+			size_b++;
 		}
 		else if (ft_stil_in_index(*a, size_b, r) <= size_of_stack(a) / 2)
 			ft_ra(a, 'a');

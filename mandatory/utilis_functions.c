@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:42:27 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/30 16:03:23 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/07 15:21:52 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	print_error(void)
 	write(2, "error", 5);
 	exit(1);
 }
+
 int	ft_strchr(const char *s, int c)
 {
 	int	i;
@@ -78,8 +79,8 @@ int	get_index_arr(int *arr, int len, int nb)
 
 int	get_index_stack(t_list *a, int nb)
 {
-	t_list *tmp;
-	int i;
+	t_list	*tmp;
+	int		i;
 
 	tmp = a;
 	i = 0;

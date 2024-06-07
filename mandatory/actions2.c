@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:41:56 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/30 16:02:53 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/07 15:15:03 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_pa(t_list **a, t_list **b, char c)
 {
-	t_list *tmp;
+	t_list	*tmp;
+
 	if (!(*b))
 		exit(0);
 	ft_lstadd_front(a, ft_lstnew((*b)->value));

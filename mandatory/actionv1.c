@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:41:17 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/30 16:02:48 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/07 15:14:43 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	ft_sa(t_list **list, char c)
 	tmp->next->value = swap;
 	if (c == 'a')
 		write(1, "sa\n", 3);
-	(void)c;
 }
 
 void	ft_sb(t_list **list, char c)
@@ -55,7 +54,6 @@ void	ft_ra(t_list **list, char c)
 	first_node->next = NULL;
 	if (c == 'a')
 		write(1, "ra\n", 3);
-	(void)c;
 }
 
 void	ft_rra(t_list **list, char c)

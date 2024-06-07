@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:45:43 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/30 16:11:21 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/07 15:22:03 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,50 +39,50 @@ int	size_of_stack(t_list **list)
 	return (i);
 }
 
-t_list *ft_find_max(t_list *b)
+t_list	*ft_find_max(t_list *b)
 {
-    t_list *tmp;
-    t_list *max;
-    
-    if (!b)
+	t_list	*tmp;
+	t_list	*max;
+
+	if (!b)
 		return (NULL);
 	max = b;
-    tmp = b->next;
-    while (tmp)
-    {
-        if (tmp->value > max->value)
-            max = tmp;
-        tmp = tmp->next;
-    }
-    return (max);
+	tmp = b->next;
+	while (tmp)
+	{
+		if (tmp->value > max->value)
+			max = tmp;
+		tmp = tmp->next;
+	}
+	return (max);
 }
 
-t_list *ft_find_min(t_list *a)
+t_list	*ft_find_min(t_list *a)
 {
-    t_list *tmp;
-    t_list *min;
-    
-    if (!a)
+	t_list	*tmp;
+	t_list	*min;
+
+	if (!a)
 		return (NULL);
 	min = a;
-    tmp = a->next;
-    while (tmp)
-    {
-        if (tmp->value < min->value)
-            min = tmp;
-        tmp = tmp->next;
-    }
-    return (min);
+	tmp = a->next;
+	while (tmp)
+	{
+		if (tmp->value < min->value)
+			min = tmp;
+		tmp = tmp->next;
+	}
+	return (min);
 }
 
-void    print_stack(t_list **a)
+void	print_stack(t_list **a)
 {
-    t_list *tmp;
+	t_list	*tmp;
 
-    tmp = *a;
-    while(tmp)
-    {
-        ft_printf("%d\n", tmp->value); // fix this later
-        tmp = tmp->next;
-    }
+	tmp = *a;
+	while (tmp)
+	{
+		ft_printf("%d\n", tmp->value);
+		tmp = tmp->next;
+	}
 }

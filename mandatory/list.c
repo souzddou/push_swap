@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:44:32 by souzddou          #+#    #+#             */
-/*   Updated: 2024/05/30 16:03:09 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/07 15:15:17 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	}
 }
 
-void	ft_lstclear(t_list **lst, void (*del)(void
-*))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 

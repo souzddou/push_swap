@@ -6,12 +6,11 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:42:15 by souzddou          #+#    #+#             */
-/*   Updated: 2024/06/02 15:26:30 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/07 15:15:22 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
 
 void	check_dig(int ac, char **av)
 {
