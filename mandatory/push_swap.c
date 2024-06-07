@@ -38,8 +38,8 @@ void check_parsing(char **av, int ac, t_list **a)
 	if (ft_strcmp(av[1], " ") == 0)
 			print_error();
 
-		var.matrix = read_numbers(ac, av);
 		parsing_func(ac, av);
+		var.matrix = read_numbers(ac, av);
 
 		i = 0;
 		while (var.matrix[i])
@@ -86,9 +86,7 @@ int	main(int ac, char **av)
 		check_parsing(av, ac, &a);
 		begin_sort(&a, &b);
 		print_stack(&a);
-		// ft_lstclear(&b , free);
-		ft_lstclear(&a , free);
-		// free_stack(a);
+		free_stack(a);
 		return (0);
 	}
 
