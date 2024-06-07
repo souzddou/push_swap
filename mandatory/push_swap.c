@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:40:34 by souzddou          #+#    #+#             */
-/*   Updated: 2024/06/07 15:27:51 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/07 17:11:23 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,8 @@ int	check_sort(t_list *list)
 	tmp2 = list->next;
 	while (tmp2)
 	{
-		if (tmp && tmp2 && tmp->value && tmp2->value
-			&& tmp->value > tmp2->value)
-		{
+		if (tmp->value > tmp2->value)
 			return (0);
-		}
 		tmp = tmp2;
 		tmp2 = tmp2->next;
 	}
@@ -37,10 +34,11 @@ void	check_parsing(char **av, int ac, t_list **a)
 	t_var	var;
 	int		i;
 
+	parsing_func(ac, av);
 	if (ft_strcmp(av[1], " ") == 0)
 		print_error();
-	parsing_func(ac, av);
 	var.matrix = read_numbers(ac, av);
+	check_double(ac, var.matrix);
 	i = 0;
 	while (var.matrix[i])
 	{

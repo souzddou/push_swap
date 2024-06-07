@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:42:27 by souzddou          #+#    #+#             */
-/*   Updated: 2024/06/07 15:21:52 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/07 16:32:29 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	print_error(void)
 {
-	write(2, "error", 5);
+	write(2, "Error\n", 6);
 	exit(1);
 }
 

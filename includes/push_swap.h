@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:43:10 by souzddou          #+#    #+#             */
-/*   Updated: 2024/06/07 15:26:55 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/07 17:03:44 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int		ft_printf(const char *s, ...);
 void	free_stack(t_list *head);
 void	free_strr(char **str);
 void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	check_double(int ac, char **s);
 // void free_all_lists(t_data_with_list data_array[], int size);
 // void	free_stackk(t_data_with_list *head, int ac);
 

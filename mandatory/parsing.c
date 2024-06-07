@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:42:15 by souzddou          #+#    #+#             */
-/*   Updated: 2024/06/07 15:15:22 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/07 17:23:19 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,19 @@ void	check_dig(int ac, char **av)
 	}
 }
 
-void	check_double(int ac, char **av)
+void	check_double(int ac, char **s)
 {
 	int	i;
 	int	j;
 
-	i = 1;
-	while (i < ac)
+	(void)ac;
+	i = 0;
+	while (s[i])
 	{
 		j = i + 1;
-		while (av[j])
+		while (s[j])
 		{
-			if (ft_atoi(av[i]) == ft_atoi(av[j]))
+			if (ft_atoi(s[i]) == ft_atoi(s[j]))
 			{
 				print_error();
 			}
@@ -64,5 +65,4 @@ void	check_double(int ac, char **av)
 void	parsing_func(int ac, char **av)
 {
 	check_dig(ac, av);
-	check_double(ac, av);
 }

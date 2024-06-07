@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 12:11:46 by souzddou          #+#    #+#             */
-/*   Updated: 2024/06/07 15:26:41 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/07 17:18:09 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,4 @@ void	ft_first_sort(t_list **a, t_list **b, int *arr, int len)
 		else
 			ft_rra(a, 'a');
 	}
-	free(arr);
 }
