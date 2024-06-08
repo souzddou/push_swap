@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:42:15 by souzddou          #+#    #+#             */
-/*   Updated: 2024/06/07 19:01:54 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/08 18:05:51 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	extra_chec_mouline(char **av, int i, int j)
 	if ((av[i][j] == '-' && av[i][j + 2] == '-') || (av[i][j] == '+' && av[i][j
 			+ 2] == '-') || (av[i][j] == '-' && av[i][j + 2] == '+')
 		|| (av[i][j] == '+' && av[i][j + 2] == '+'))
-		print_error();
-	if (av[i][j] == ' ' && av[i][j])
 		print_error();
 }
 
@@ -65,6 +63,7 @@ void	check_double(int ac, char **s)
 		{
 			if (ft_atoi(s[i]) == ft_atoi(s[j]))
 			{
+				free_strr(s);
 				print_error();
 			}
 			j++;

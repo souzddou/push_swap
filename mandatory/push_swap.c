@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:40:34 by souzddou          #+#    #+#             */
-/*   Updated: 2024/06/07 18:39:32 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/08 18:04:48 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,19 @@ int	check_sort(t_list *list)
 	return (1);
 }
 
+void	check_spaces(char **av)
+{
+	char	**split;
+
+	split = NULL;
+	split = ft_split(av[1], ' ');
+	if (!split[0])
+	{
+		free_strr(split);
+		print_error();
+	}
+}
+
 void	check_parsing(char **av, int ac, t_list **a)
 {
 	t_var	var;
@@ -36,22 +49,19 @@ void	check_parsing(char **av, int ac, t_list **a)
 	int		j;
 
 	parsing_func(ac, av);
-	if (ft_strcmp(av[1], " ") == 0)
-		print_error();
+	check_spaces(av);
 	j = 0;
 	while (av[j])
 	{
 		if (ft_strlen(av[j]) == 0)
-			print_error();
+			exit(1);
 		j++;
 	}
 	var.matrix = read_numbers(ac, av);
 	check_double(ac, var.matrix);
 	i = 0;
 	while (var.matrix[i])
-	{
 		ft_lstadd_back(a, ft_lstnew(ft_atoi(var.matrix[i++])));
-	}
 	free_strr(var.matrix);
 }
 
@@ -75,7 +85,6 @@ void	begin_sort(t_list **a, t_list **b)
 			ft_first_sort(a, b, arr, len);
 			ft_second_sort(a, b);
 		}
-		print_stack(a);
 	}
 	free(arr);
 }

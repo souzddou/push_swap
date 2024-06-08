@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:45:43 by souzddou          #+#    #+#             */
-/*   Updated: 2024/06/07 15:22:03 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/08 17:06:09 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	get_range(int size)
 {
 	if (size < 10)
 		return (5);
-	else if (size < 100)
+	else if (size <= 100)
 		return (15);
 	else
 		return (30);

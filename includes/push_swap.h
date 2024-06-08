@@ -6,7 +6,7 @@
 /*   By: souzddou <souzddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:43:10 by souzddou          #+#    #+#             */
-/*   Updated: 2024/06/07 17:03:44 by souzddou         ###   ########.fr       */
+/*   Updated: 2024/06/08 17:49:44 by souzddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "structs.h"
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
